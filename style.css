@@ -1,0 +1,479 @@
+/* ===== Reset & Base ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #ffffff;
+    color: #333;
+    font-size: 13px;
+}
+
+/* ===== Top Bar ===== */
+.top-bar {
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(to right, #1a237e, #0d47a1, #1565c0);
+}
+
+/* ===== Profile Header ===== */
+.profile-header {
+    padding: 15px 30px;
+    background-color: #ffffff;
+}
+
+.profile-container {
+    display: flex;
+    align-items: flex-start;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.profile-photo-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 120px;
+}
+
+.profile-photo {
+    width: 110px;
+    height: 130px;
+    object-fit: cover;
+    border: 2px solid #1565c0;
+    border-radius: 2px;
+}
+
+.student-name {
+    margin-top: 6px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+    letter-spacing: 0.5px;
+}
+
+.profile-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 12px;
+    padding-top: 15px;
+}
+
+.right-details {
+    margin-left: auto;
+}
+
+.detail-row {
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+}
+
+.detail-label {
+    font-size: 13px;
+    font-weight: bold;
+    color: #d32f2f;
+    white-space: nowrap;
+}
+
+.detail-value {
+    font-size: 13px;
+    color: #333;
+}
+
+/* ===== Divider ===== */
+.divider {
+    border: none;
+    border-top: 1px solid #e0e0e0;
+    margin: 5px 20px 15px 20px;
+}
+
+/* ===== Accordion Wrapper ===== */
+.accordion-wrapper {
+    padding: 0 20px 30px 20px;
+}
+
+/* ===== Accordion Section ===== */
+.accordion-section {
+    margin-bottom: 12px;
+}
+
+.accordion-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(to right, #1a3a6c, #1e4d8c, #2563a8, #2d74b8);
+    padding: 0;
+    cursor: pointer;
+    user-select: none;
+    min-height: 44px;
+    border-radius: 0;
+    transition: background 0.2s ease;
+}
+
+.accordion-header:hover {
+    background: linear-gradient(to right, #0f2d5c, #163f7c, #1d5598, #2568a8);
+}
+
+.accordion-icon-title {
+    display: flex;
+    align-items: center;
+    gap: 0;
+}
+
+.icon-box {
+    width: 40px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #d4a017;
+    color: #1a1a1a;
+    flex-shrink: 0;
+}
+
+.accordion-title {
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    padding-left: 15px;
+}
+
+.accordion-arrow {
+    color: #ffffff;
+    font-size: 14px;
+    padding-right: 15px;
+    transition: transform 0.3s ease;
+}
+
+.accordion-arrow.up {
+    /* Already showing up arrow via innerHTML */
+}
+
+/* ===== Accordion Content ===== */
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, padding 0.3s ease;
+    background-color: #ffffff;
+    padding: 0 15px;
+}
+
+.accordion-content.open {
+    max-height: 500px;
+    padding: 15px 15px;
+}
+
+/* ===== Info Table ===== */
+.info-table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #b0bec5;
+    font-size: 13px;
+}
+
+.info-table td {
+    padding: 8px 12px;
+    border: 1px solid #cfd8dc;
+    vertical-align: top;
+}
+
+.info-table .table-label {
+    background-color: #eceff1;
+    color: #37474f;
+    font-weight: normal;
+    width: 30%;
+    white-space: nowrap;
+}
+
+.info-table .table-value {
+    background-color: #fff8e7;
+    color: #333;
+    font-weight: normal;
+}
+
+/* ===== Responsive - Tablet landscape & small desktop (<=1024px) ===== */
+@media (max-width: 1024px) {
+    .profile-container {
+        gap: 25px;
+    }
+
+    .right-details {
+        margin-left: 0;
+    }
+
+    .profile-header {
+        padding: 15px 20px;
+    }
+
+    .detail-value {
+        font-size: 12px;
+    }
+}
+
+/* ===== Responsive - Tablet portrait (<=768px) ===== */
+@media (max-width: 768px) {
+    .profile-header {
+        padding: 15px;
+    }
+
+    .profile-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .profile-photo-wrapper {
+        min-width: unset;
+    }
+
+    .profile-photo {
+        width: 100px;
+        height: 120px;
+    }
+
+    .right-details {
+        margin-left: 0;
+    }
+
+    .profile-details {
+        align-items: center;
+        padding-top: 5px;
+        width: 100%;
+    }
+
+    .detail-row {
+        flex-direction: column;
+        align-items: center;
+        gap: 2px;
+        text-align: center;
+    }
+
+    .detail-label {
+        white-space: normal;
+        text-align: center;
+    }
+
+    .detail-value {
+        text-align: center;
+        word-break: break-word;
+    }
+
+    .accordion-wrapper {
+        padding: 0 12px 20px 12px;
+    }
+
+    .accordion-title {
+        font-size: 13px;
+        letter-spacing: 1px;
+    }
+
+    .accordion-header {
+        min-height: 40px;
+    }
+
+    .icon-box {
+        width: 36px;
+        height: 40px;
+    }
+
+    .icon-box svg {
+        width: 18px;
+        height: 18px;
+    }
+
+    .info-table {
+        font-size: 12px;
+    }
+
+    .info-table .table-label {
+        width: 35%;
+        white-space: normal;
+    }
+
+    .info-table td {
+        padding: 7px 10px;
+    }
+
+    .divider {
+        margin: 5px 12px 12px 12px;
+    }
+}
+
+/* ===== Responsive - Mobile (<=480px) ===== */
+@media (max-width: 480px) {
+    body {
+        font-size: 12px;
+    }
+
+    .profile-header {
+        padding: 12px 10px;
+    }
+
+    .profile-container {
+        gap: 10px;
+    }
+
+    .profile-photo {
+        width: 85px;
+        height: 105px;
+    }
+
+    .student-name {
+        font-size: 11px;
+    }
+
+    .detail-label {
+        font-size: 11px;
+    }
+
+    .detail-value {
+        font-size: 11px;
+    }
+
+    .accordion-wrapper {
+        padding: 0 8px 15px 8px;
+    }
+
+    .accordion-section {
+        margin-bottom: 8px;
+    }
+
+    .accordion-header {
+        min-height: 38px;
+    }
+
+    .icon-box {
+        width: 32px;
+        height: 38px;
+    }
+
+    .icon-box svg {
+        width: 16px;
+        height: 16px;
+    }
+
+    .accordion-title {
+        font-size: 11px;
+        letter-spacing: 0.5px;
+        padding-left: 10px;
+    }
+
+    .accordion-arrow {
+        font-size: 12px;
+        padding-right: 10px;
+    }
+
+    .accordion-content.open {
+        padding: 10px 8px;
+    }
+
+    /* Make table scrollable horizontally on very small screens */
+    .accordion-content.open {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .info-table {
+        font-size: 11px;
+        min-width: 320px;
+    }
+
+    .info-table .table-label {
+        width: 40%;
+        padding: 6px 8px;
+    }
+
+    .info-table .table-value {
+        padding: 6px 8px;
+    }
+
+    .info-table td {
+        padding: 6px 8px;
+    }
+
+    .divider {
+        margin: 5px 8px 10px 8px;
+    }
+}
+
+/* ===== Responsive - Very small phones (<=360px) ===== */
+@media (max-width: 360px) {
+    .profile-photo {
+        width: 75px;
+        height: 95px;
+    }
+
+    .student-name {
+        font-size: 10px;
+    }
+
+    .detail-label {
+        font-size: 10px;
+    }
+
+    .detail-value {
+        font-size: 10px;
+    }
+
+    .accordion-title {
+        font-size: 10px;
+        letter-spacing: 0.3px;
+        padding-left: 8px;
+    }
+
+    .icon-box {
+        width: 28px;
+        height: 36px;
+    }
+
+    .icon-box svg {
+        width: 14px;
+        height: 14px;
+    }
+
+    .accordion-header {
+        min-height: 36px;
+    }
+
+    .info-table {
+        font-size: 10px;
+        min-width: 280px;
+    }
+}
+
+/* ===== Landscape orientation on mobile ===== */
+@media (max-height: 500px) and (orientation: landscape) {
+    .profile-container {
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .profile-photo {
+        width: 70px;
+        height: 85px;
+    }
+
+    .profile-details {
+        padding-top: 0;
+        gap: 6px;
+    }
+
+    .detail-row {
+        flex-direction: row;
+        align-items: baseline;
+    }
+
+    .accordion-content.open {
+        max-height: 400px;
+        overflow-y: auto;
+    }
+}
